@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Agent 沖縄 | 24時間中国語対応サポート</title>
+    <meta name="description" content="沖縄のレンタカー事業者様向け、24時間中国語（台湾華語）対応サポートサービス。月額¥10,000、初期費用¥0で即時導入可能。インバウンド対応の課題を解決します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-dark: #1239a5;
+            --primary-light: #3b82f6;
+            --accent: #06b6d4;
+            --accent2: #8b5cf6;
+            --dark: #0b1120;
+            --dark2: #111827;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --border: rgba(255,255,255,0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 2rem;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(11, 17, 32, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 18px;
+            box-shadow: 0 0 20px rgba(26,86,219,0.5);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span { color: var(--accent); }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: white; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 0.6rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26,86,219,0.4);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,86,219,0.5);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(26,86,219,0.35) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 80% 60%, rgba(6,182,212,0.15) 0%, transparent 60%),
+                linear-gradient(160deg, #0b1120 0%, #111827 60%, #0f1f3d 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-float {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-float:nth-child(1) {
+            width: 600px; height: 600px;
+            background: var(--primary);
+            top: -100px; left: -100px;
+            animation-delay: 0s;
+        }
+
+        .hero-float:nth-child(2) {
+            width: 400px; height: 400px;
+            background: var(--accent);
+            bottom: -100px; right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 140px 2rem 80px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(26,86,219,0.2);
+            border: 1px solid rgba(26,86,219,0.4);
+            color: #93c5fd;
+            padding: 0.45rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i { font-size: 0.8rem; }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #60a5fa, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255,255,255,0.7);
+            max-width: 640px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(16px);
+            padding: 1.4rem 2rem;
+            border-radius: 16px;
+            min-width: 160px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(96,165,250,0.4);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.55);
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 8px 30px rgba(26,86,219,0.5);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(26,86,219,0.6);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-3px);
+        }
+
+        /* ========== SCROLL INDICATOR ========== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        /* ========== SECTIONS ========== */
+        section { padding: 100px 2rem; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px; height: 2px;
+            background: var(--primary);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ========== PROBLEMS ========== */
+        .problems-section { background: white; }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 4px 0 0 4px;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border-color: #93c5fd;
+        }
+
+        .problem-icon {
+            width: 56px; height: 56px;
+            background: linear-gradient(135deg, rgba(26,86,219,0.1), rgba(6,182,212,0.1));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .problem-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ========== SOLUTION ========== */
+        .solution-section { background: var(--bg); }
+
+        .solution-header { text-align: center; margin-bottom: 4rem; }
+
+        .time-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .time-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transform: translateY(-6px);
+        }
+
+        .time-card.featured {
+            background: linear-gradient(135deg, var(--dark), var(--dark2));
+            border-color: rgba(26,86,219,0.4);
+            color: white;
+            box-shadow: 0 20px 60px rgba(26,86,219,0.2);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+        }
+
+        .time-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(26,86,219,0.08);
+            padding: 0.4rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .time-card.featured .time-label {
+            color: #93c5fd;
+            background: rgba(147,197,253,0.1);
+        }
+
+        .time-range {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .time-card.featured .time-range { color: white; }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li i {
+            color: #10b981;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .time-card.featured .feature-list li {
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* ========== PRICING ========== */
+        .pricing-section { background: white; }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #0b1120 0%, #1a237e 100%);
+            border-radius: 32px;
+            padding: 4rem 3rem;
+            max-width: 860px;
+            margin: 3.5rem auto 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 20%, rgba(6,182,212,0.2) 0%, transparent 60%);
+        }
+
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            top: -1px; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--primary), transparent);
+        }
+
+        .pricing-content { position: relative; z-index: 1; }
+
+        .pricing-tag {
+            display: inline-block;
+            background: rgba(6,182,212,0.15);
+            border: 1px solid rgba(6,182,212,0.3);
+            color: #67e8f9;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-display {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .price-display .unit {
+            font-size: 1.4rem;
+            opacity: 0.7;
+            font-weight: 400;
+        }
+
+        .price-note { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 2.5rem; }
+
+        .price-per-hour {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(26,86,219,0.2));
+            border: 1px solid rgba(6,182,212,0.5);
+            color: #67e8f9;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(6,182,212,0.25);
+        }
+
+        .price-per-hour strong {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 900;
+        }
+
+        .pricing-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .pricing-features li i { color: #4ade80; }
+
+        .revenue-box {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 1.8rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .revenue-box h4 {
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            font-size: 1.05rem;
+        }
+
+        .revenue-box p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .revenue-box .example {
+            margin-top: 0.8rem;
+            color: #67e8f9;
+            font-size: 0.88rem;
+            font-style: italic;
+        }
+
+        /* ========== ABOUT ========== */
+        .about-section { background: var(--bg); }
+
+        .about-role-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .about-name {
+            font-size: clamp(2rem, 4vw, 3rem) !important;
+            margin-bottom: 1rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a56db, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -1rem; right: -1rem;
+            background: white;
+            border-radius: 16px;
+            padding: 1rem 1.4rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .about-badge .number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .about-badge .label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .career-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .career-row:last-child { border-bottom: none; }
+
+        .career-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(26,86,219,0.1), rgba(6,182,212,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .career-text h4 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .career-text p {
+            color: var(--text-muted);
+            font-size: 0.87rem;
+            line-height: 1.6;
+        }
+
+        /* ========== CTA ========== */
+        .cta-section {
+            background: linear-gradient(135deg, #0b1120, #0f1f3d);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(26,86,219,0.3) 0%, transparent 60%);
+        }
+
+        .cta-content { position: relative; z-index: 1; }
+
+        .cta-section .section-label { justify-content: center; color: #93c5fd; }
+        .cta-section .section-label::before { background: #93c5fd; }
+
+        .cta-section .section-title { color: white; }
+        .cta-section .section-desc { color: rgba(255,255,255,0.6); }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1.1rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 2.5rem;
+            box-shadow: 0 8px 30px rgba(26,86,219,0.5);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(26,86,219,0.6);
+        }
+
+        /* ========== DISCLAIMER ========== */
+        .disclaimer {
+            background: white;
+            padding: 60px 2rem;
+        }
+
+        .disclaimer-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .disclaimer h4 {
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclaimer ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .disclaimer li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.87rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .disclaimer li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.88rem;
+        }
+
+        footer strong { color: rgba(255,255,255,0.8); }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            section { padding: 70px 1.2rem; }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image-wrap { max-width: 280px; margin: 0 auto; }
+
+            .nav-link { display: none; }
+
+            .pricing-card { padding: 2.5rem 1.5rem; }
+
+            .hero-stats .stat-card { min-width: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">R</div>
+                <span class="logo-text">R Agent <span>沖縄</span></span>
+            </a>
+            <div class="header-cta">
+                <a href="#about" class="nav-link">代表紹介</a>
+                <a href="#pricing" class="nav-link">料金</a>
+                <a href="#contact" class="btn-primary" id="header-cta-btn">無料相談する</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-float"></div>
+        <div class="hero-float"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i>
+                沖縄のインバウンド対応をアップデート
+            </div>
+            <h1>
+                言葉の壁を超える、<br>
+                <span class="highlight">24時間サポート</span>で<br>
+                台湾人旅行者と繋がる。
+            </h1>
+            <p class="hero-sub">
+                台湾で6年間培った本場の中国語（台湾華語）で、<br>
+                レンタカー事業者様のインバウンド対応をトータルサポート。
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-value">¥0</span>
+                    <span class="stat-label">初期費用</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">¥10,000</span>
+                    <span class="stat-label">月額（税抜）</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">24h</span>
+                    <span class="stat-label">対応時間</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">即日</span>
+                    <span class="stat-label">導入可能</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-hero btn-hero-primary" id="hero-cta-main">
+                    <i class="fa-solid fa-comments"></i>
+                    今すぐ導入相談をする
+                </a>
+                <a href="#solution" class="btn-hero btn-hero-secondary" id="hero-learn-more">
+                    <i class="fa-solid fa-circle-info"></i>
+                    サービス詳細を見る
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- PROBLEMS -->
+    <section class="problems-section" id="problems">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; margin-bottom: 1rem;">
+                <span class="section-label">Pain Points</span>
+            </div>
+            <h2 class="section-title fade-up" style="text-align: center;">
+                インバウンド対応、<br>こんな課題はありませんか？
+            </h2>
+            <div class="problems-grid">
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-car-burst"></i>
+                    </div>
+                    <h3>事故時の対応が不安</h3>
+                    <p>トラブル発生時に言語が通じず、適切な初期対応や案内ができない。</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3>日本語が通じない</h3>
+                    <p>台湾からの観光客との意思疎通に困り、顧客満足度が低下している。</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <h3>夜間のトラブル対応が困難</h3>
+                    <p>深夜・早朝のトラブルに対応できるスタッフがいない。</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-yen-sign"></i>
+                    </div>
+                    <h3>コストが高すぎる</h3>
+                    <p>通訳を雇ったり、翻訳ツールを導入するコストが大きく踏み出せない。</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </div>
+                    <h3>専門スタッフが不在</h3>
+                    <p>中国語対応できるスタッフの採用・育成が難しい。</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>インバウンド需要を取りこぼす</h3>
+                    <p>台湾人旅行者の増加に対応できず、ビジネスチャンスを逃している。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="solution-header">
+                <span class="section-label fade-up">Solution</span>
+                <h2 class="section-title fade-up">24時間サポートで<br>すべて解決します</h2>
+                <p class="section-desc fade-up">顧客満足度UP、クレーム減少、インバウンド売上アップに直結</p>
+            </div>
+            <div class="time-cards">
+                <div class="time-card fade-up">
+                    <span class="time-label"><i class="fa-solid fa-sun"></i> 昼間</span>
+                    <div class="time-range">AM 2:00 ～ PM 8:00</div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> AIによるLINE自動対応</li>
+                        <li><i class="fa-solid fa-circle-check"></i> よくある質問への即時回答</li>
+                        <li><i class="fa-solid fa-circle-check"></i> トラブル時の初期対応・案内</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 中国語での案内メッセージ送信</li>
+                    </ul>
+                </div>
+                <div class="time-card featured fade-up">
+                    <div class="featured-badge">有人対応</div>
+                    <span class="time-label"><i class="fa-solid fa-moon"></i> 夜間</span>
+                    <div class="time-range">PM 8:00 ～ AM 2:00</div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 有人による電話・LINE対応</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 本場の台湾華語で会話</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 日本語対応の通訳サポート</li>
+                        <li><i class="fa-solid fa-circle-check"></i> トラブル時の初期対応・案内</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 安心の緊急連絡窓口として機能</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label fade-up">Pricing</span>
+                <h2 class="section-title fade-up">シンプルな料金プラン</h2>
+                <p class="section-desc fade-up">すべての機能が含まれたワンプライス。まず1ヶ月だけ試せます。</p>
+            </div>
+            <div class="pricing-card fade-up">
+                <div class="pricing-content">
+                    <span class="pricing-tag">月額プラン / 月限度50件対応</span>
+                    <div class="price-display">
+                        ¥10,000<span class="unit">（税抜）</span>
+                    </div>
+                    <div class="price-per-hour">
+                        <i class="fa-solid fa-bolt"></i>
+                        1時間あたり <strong>約14円</strong> の圧倒的な安さ
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-circle-check"></i> 初期費用 ¥0</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 月限度50件まで対応可</li>
+
+                        <li><i class="fa-solid fa-circle-check"></i> 24時間365日対応</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 即時導入・即時解約可能</li>
+                    </ul>
+                    <div class="revenue-box">
+                        <h4>💡 事業者様の収益モデル</h4>
+                        <p>お客様に任意の料金でオプションとして販売いただけます。サービスを還元することで追加収益が生まれます。</p>
+                        <p class="example">例：車両代金 + 中国語対応オプション ¥1,000〜</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrap fade-up">
+                    <div class="about-image">
+                        <img src="representative.jpg" alt="代表 前里 陸斗">
+                    </div>
+                    <div class="about-badge">
+                        <div class="number">5,000+</div>
+                        <div class="label">台湾人との<br>人脈ネットワーク</div>
+                    </div>
+                </div>
+                <div class="fade-up">
+                    <span class="section-label">Representative</span>
+                    <p class="about-role-label">R Agent 沖縄　代表</p>
+                    <h2 class="section-title about-name">前里 陸斗</h2>
+                    <p class="section-desc" style="margin-bottom: 2rem;">沖縄県名護市出身。台湾トップリーグで5年間サッカー選手として活動後、台湾で6年間生活し本場の台湾華語を習得。</p>
+                    <div>
+                        <div class="career-row">
+                            <div class="career-icon"><i class="fa-solid fa-futbol"></i></div>
+                            <div class="career-text">
+                                <h4>台湾サッカートップリーグ所属</h4>
+                                <p>5年間のプロサッカー選手として台湾リーグで活動。現地での人脈を構築。</p>
+                            </div>
+                        </div>
+                        <div class="career-row">
+                            <div class="career-icon"><i class="fa-solid fa-comments"></i></div>
+                            <div class="career-text">
+                                <h4>本場の台湾華語を習得</h4>
+                                <p>台湾での6年間の生活で、ネイティブレベルの中国語（台湾華語）を習得。</p>
+                            </div>
+                        </div>
+                        <div class="career-row">
+                            <div class="career-icon"><i class="fa-solid fa-people-group"></i></div>
+                            <div class="career-text">
+                                <h4>5,000人の台湾人ネットワーク</h4>
+                                <p>ドラッグストア勤務時代に5,000人の台湾人と連絡先を交換。独自のインバウンド集客ネットワークを確立。</p>
+                            </div>
+                        </div>
+                        <div class="career-row">
+                            <div class="career-icon"><i class="fa-solid fa-car"></i></div>
+                            <div class="career-text">
+                                <h4>2025年11月〜 R Agent 沖縄 始動</h4>
+                                <p>沖縄と台湾を繋ぐレンタカー仲介・インバウンドサポートサービスを開始。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-label fade-up">Contact</span>
+                <h2 class="section-title fade-up">まずは気軽にご相談ください</h2>
+                <p class="section-desc fade-up">
+                    1ヶ月のお試し導入も可能です。<br>インバウンド対応の課題、お気軽にご連絡ください。
+                </p>
+                <a href="https://line.me/R/" class="cta-btn fade-up" id="contact-line-btn" target="_blank">
+                    <i class="fa-brands fa-line"></i>
+                    今すぐ導入相談をする（無料）
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+        <div class="disclaimer-inner fade-up">
+            <h4><i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> 責任範囲と免責事項</h4>
+            <ul>
+                <li>対応範囲：相談対応、通訳、初期案内</li>
+                <li>対応対象外：事故処理代行、保険手続き、法的判断、現地対応</li>
+                <li>問題解決を保証するものではありません</li>
+                <li>最終責任は「レンタカー事業者様」と「お客様」に帰属します</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>R Agent 沖縄</strong> &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade up on scroll
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
