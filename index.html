@@ -71,6 +71,9 @@
         "@type": "AdministrativeArea",
         "name": "沖縄県"
       },
+      "sameAs": [
+        "https://www.instagram.com/rikuto_okinawa_shi_sa_14/"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "インバウンドサポートサービス",
@@ -89,6 +92,9 @@
       }
     }
     </script>
+
+    <!-- Instagram SEO -->
+    <meta property="og:see_also" content="https://www.instagram.com/rikuto_okinawa_shi_sa_14/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -934,11 +940,47 @@
             background: var(--dark);
             color: rgba(255,255,255,0.5);
             text-align: center;
-            padding: 2.5rem;
+            padding: 2.5rem 2rem;
             font-size: 0.88rem;
         }
 
         footer strong { color: rgba(255,255,255,0.8); }
+
+        .footer-sns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-sns a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: all 0.3s ease;
+        }
+
+        .footer-sns a:hover {
+            color: white;
+            border-color: rgba(225,48,108,0.6);
+            background: rgba(225,48,108,0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-sns a i {
+            font-size: 1rem;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         /* ========== ANIMATIONS ========== */
         .fade-up {
@@ -1251,6 +1293,12 @@
 
     <!-- FOOTER -->
     <footer>
+        <div class="footer-sns">
+            <a href="https://www.instagram.com/rikuto_okinawa_shi_sa_14/" target="_blank" rel="noopener noreferrer" id="footer-instagram-link" aria-label="R Agent 沖縄 Instagram">
+                <i class="fa-brands fa-instagram"></i>
+                @rikuto_okinawa_shi_sa_14
+            </a>
+        </div>
         <p><strong>R Agent 沖縄</strong> &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p>
     </footer>
 
