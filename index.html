@@ -1113,6 +1113,187 @@
             transform: translateY(0);
         }
 
+        /* ========== SERVICE MODEL (ACCIDENT FLOW) ========== */
+        .flow-section {
+            background: white;
+            padding: 100px 2rem;
+        }
+
+        .flow-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .flow-steps::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            z-index: 1;
+        }
+
+        .flow-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: white;
+            padding: 2.2rem 1.5rem;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: #93c5fd;
+        }
+
+        .step-number {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            box-shadow: 0 8px 25px rgba(26, 86, 219, 0.25);
+            border: 4px solid white;
+        }
+
+        .step-number span {
+            font-size: 1.3rem;
+            line-height: 1.1;
+        }
+
+        .flow-step h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .flow-step p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .flow-step ul {
+            list-style: none;
+            margin-top: 1rem;
+            padding: 0;
+            text-align: left;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .flow-step ul li {
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .flow-step ul li i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .flow-benefit-card {
+            margin-top: 5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+            border: 1px solid #dbeafe;
+            border-radius: 28px;
+            padding: 3.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(26, 86, 219, 0.03);
+        }
+
+        .benefit-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .benefit-title i {
+            font-size: 1.7rem;
+            color: var(--accent);
+        }
+
+        .benefit-desc {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 2.5rem;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+            border: 1px solid #eff6ff;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .benefit-item-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item-icon.blue { color: #3b82f6; }
+        .benefit-item-icon.green { color: #10b981; }
+        .benefit-item-icon.purple { color: #8b5cf6; }
+
+        .benefit-item h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--dark);
+        }
+
+        .benefit-item p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             section {
@@ -1313,6 +1494,57 @@
             .disclaimer-inner {
                 padding: 1.8rem 1.2rem;
             }
+
+            /* Flow & Benefits Responsive */
+            .flow-section {
+                padding: 70px 1.2rem;
+            }
+
+            .flow-steps {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                margin-top: 3rem;
+            }
+
+            .flow-steps::before {
+                display: none;
+            }
+
+            .flow-step {
+                padding: 2.2rem 1.5rem;
+            }
+
+            .step-number {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 1.2rem;
+            }
+
+            .flow-benefit-card {
+                padding: 2.2rem 1.5rem;
+                margin-top: 3rem;
+                border-radius: 24px;
+            }
+
+            .benefit-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .benefit-desc {
+                font-size: 0.9rem;
+                line-height: 1.7;
+                margin-bottom: 1.8rem;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .benefit-item {
+                padding: 1.5rem;
+            }
         }
 
         /* スマホ専用（480px以下） */
@@ -1438,6 +1670,7 @@
             </a>
             <div class="header-cta">
                 <a href="#about" class="nav-link">代表紹介</a>
+                <a href="#accident-flow" class="nav-link">事故対応フロー</a>
                 <a href="#pricing" class="nav-link">料金</a>
                 <div class="header-cta-group">
                     <a href="https://www.instagram.com/okinawa_rentacar_rikuto/" target="_blank"
@@ -1572,6 +1805,96 @@
                         <li><i class="fa-solid fa-circle-check"></i> 中国語での案内メッセージ送信</li>
                         <li><i class="fa-solid fa-circle-check"></i> 安心の緊急連絡窓口として機能</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE MODEL (ACCIDENT FLOW) -->
+    <section class="flow-section" id="accident-flow">
+        <div class="container flow-container">
+            <div class="solution-header">
+                <span class="section-label fade-up">Service Model</span>
+                <h2 class="section-title fade-up">万が一の事故対応フロー</h2>
+                <p class="section-desc fade-up">万が一、中華圏のお客様が事故を起こされてしまった場合でも、当サービスが間に入ることで、お客様・事業者様・警察の三者間でのスムーズな事故処理を実現します。</p>
+            </div>
+
+            <div class="flow-steps">
+                <!-- STEP 1 -->
+                <div class="flow-step fade-up">
+                    <div class="step-number">
+                        STEP<span>01</span>
+                    </div>
+                    <h3>公式LINEでの状況共有</h3>
+                    <p>お客様より、公式LINEへ事故箇所の写真や現場の状況が分かる画像と位置情報を送信していただきます。</p>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="flow-step fade-up">
+                    <div class="step-number">
+                        STEP<span>02</span>
+                    </div>
+                    <h3>事故報告フォームへの入力</h3>
+                    <p>お客様に専用の事故報告フォームから、以下の必要事項をご入力・送信していただきます。</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 氏名</li>
+                        <li><i class="fa-solid fa-check"></i> ご利用の事業者様</li>
+                        <li><i class="fa-solid fa-check"></i> 車両ナンバー</li>
+                        <li><i class="fa-solid fa-check"></i> 事故の類型（単独事故・もらい事故・その他）</li>
+                        <li><i class="fa-solid fa-check"></i> 事故状況の詳細説明（※中国語可）</li>
+                    </ul>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="flow-step fade-up">
+                    <div class="step-number">
+                        STEP<span>03</span>
+                    </div>
+                    <h3>日本語訳と事業者様への迅速な共有</h3>
+                    <p>お客様から送られた入力内容および写真などを、当サービスにて即座に日本語へ翻訳し、事業者様へ正確に共有いたします。</p>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="flow-step fade-up">
+                    <div class="step-number">
+                        STEP<span>04</span>
+                    </div>
+                    <h3>警察への確実な事故連絡</h3>
+                    <p>翻訳した正確な情報をもとに、警察へ事故の連絡・報告を行っていただきます。</p>
+                </div>
+            </div>
+
+            <!-- BENEFITS -->
+            <div class="flow-benefit-card fade-up">
+                <div class="benefit-title">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>このサービスモデルがもたらすメリット</span>
+                </div>
+                <p class="benefit-desc">
+                    言葉が通じないことによる現場の混乱や、事業者様の確認の手間を未然に防ぎます。お客様にとっては「母国語で状況を説明できる安心感」を、事業者様や警察の皆様にとっては「正確な状況把握による迅速な事後処理」を提供し、三者すべてがスムーズにトラブルを解決できるよう全力でサポートいたします。
+                </p>
+                <div class="benefit-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-item-icon blue">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h4>お客様のメリット</h4>
+                        <p>言葉が通じない異国の地でも、「母国語で正確に状況を説明できる」という圧倒的な安心感をご提供します。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-item-icon green">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h4>事業者様のメリット</h4>
+                        <p>翻訳・整理された正確な現場情報が即座に共有されるため、確認の手間や状況把握の混乱を最小限に抑えられます。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-item-icon purple">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <h4>警察・処理のスムーズ化</h4>
+                        <p>正確な状況把握による迅速な現場処理が可能になり、現場の全員がスムーズにトラブルを解決できます。</p>
+                    </div>
                 </div>
             </div>
         </div>
